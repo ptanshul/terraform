@@ -5,7 +5,7 @@ deny[msg] {
   resource.type == "aws_instance"
 
   instance_type := resource.change.after.instance_type
-  instance_type != "t2.medium"
+  instance_type != "t3.micro"
 
   msg = sprintf("Only t2.medium instances are allowed. Found: %v", [instance_type])
 }
